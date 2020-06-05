@@ -19,20 +19,28 @@ function App() {
 
     setResult(`${newResult}`);
     setEquation(`${equation}${num}`);
-    console.log(num);
   };
 
   const handleSigne = (sig: string) => {
+    const lastChar = equation.slice(-1);
+    const secondLastChar = equation.slice(-2, -1);
+    let newEquation = equation;
+
     if (finish) {
+      setFinish(false);
+    }
+    if (lastChar === "-" && sig === "-") {
       return;
     }
-    if (isSigne(result)) {
-      return;
+    if (isSigne(lastChar) && sig !== "-") {
+      newEquation = equation.slice(0, -1);
+      if (isSigne(secondLastChar)) {
+        newEquation = equation.slice(0, -2);
+      }
     }
 
     setResult(sig);
-    setEquation(`${equation}${sig}`);
-    console.log(sig);
+    setEquation(`${newEquation}${sig}`);
   };
 
   const handleEqual = (equal: string) => {
@@ -41,10 +49,12 @@ function App() {
     if (isSigne(lastCharacter)) {
       finalEquation = finalEquation.slice(0, finalEquation.length - 1);
     }
-
-    setEquation(finalEquation);
-    setResult(eval(finalEquation));
-
+    const evalResult = eval(finalEquation);
+    const finalResult = Number.isInteger(evalResult)
+      ? evalResult
+      : Number.parseFloat(evalResult.toFixed(4));
+    setEquation(String(finalResult));
+    setResult(String(finalResult));
     setFinish(true);
   };
 
@@ -73,33 +83,67 @@ function App() {
   return (
     <div className="App">
       <div>{equation}</div>
-      <div>{result}</div>
+      <div id="display">{result}</div>
       <div className="container1">
-        <button onClick={handleClear}>AC</button>
-        <button onClick={() => handleSigne("/")}>/</button>
-        <button onClick={() => handleSigne("*")}>X</button>
+        <button id="clear" onClick={handleClear}>
+          AC
+        </button>
+        <button id="divide" onClick={() => handleSigne("/")}>
+          /
+        </button>
+        <button id="multiply" onClick={() => handleSigne("*")}>
+          X
+        </button>
       </div>
       <div className="container2">
-        <button onClick={() => handleNumber("7")}>7</button>
-        <button onClick={() => handleNumber("8")}>8</button>
-        <button onClick={() => handleNumber("9")}>9</button>
-        <button onClick={() => handleSigne("-")}>-</button>
+        <button id="seven" onClick={() => handleNumber("7")}>
+          7
+        </button>
+        <button id="eight" onClick={() => handleNumber("8")}>
+          8
+        </button>
+        <button id="nine" onClick={() => handleNumber("9")}>
+          9
+        </button>
+        <button id="subtract" onClick={() => handleSigne("-")}>
+          -
+        </button>
       </div>
       <div className="container3">
-        <button onClick={() => handleNumber("4")}>4</button>
-        <button onClick={() => handleNumber("5")}>5</button>
-        <button onClick={() => handleNumber("6")}>6</button>
-        <button onClick={() => handleSigne("+")}>+</button>
+        <button id="four" onClick={() => handleNumber("4")}>
+          4
+        </button>
+        <button id="five" onClick={() => handleNumber("5")}>
+          5
+        </button>
+        <button id="six" onClick={() => handleNumber("6")}>
+          6
+        </button>
+        <button id="add" onClick={() => handleSigne("+")}>
+          +
+        </button>
       </div>
       <div className="container4">
-        <button onClick={() => handleNumber("1")}>1</button>
-        <button onClick={() => handleNumber("2")}>2</button>
-        <button onClick={() => handleNumber("3")}>3</button>
-        <button onClick={() => handleEqual("=")}>=</button>
+        <button id="one" onClick={() => handleNumber("1")}>
+          1
+        </button>
+        <button id="two" onClick={() => handleNumber("2")}>
+          2
+        </button>
+        <button id="three" onClick={() => handleNumber("3")}>
+          3
+        </button>
+        <button id="equals" onClick={() => handleEqual("=")}>
+          =
+        </button>
       </div>
       <div className="container5">
-        <button onClick={() => handleNumber("0")}>0</button>
-        <button onClick={() => handlesignDot(".")}>.</button>
+        <button id="zero" onClick={() => handleNumber("0")}>
+          0
+        </button>
+        <button id="decimal" onClick={() => handlesignDot(".")}>
+          .
+        </button>
       </div>
     </div>
   );
