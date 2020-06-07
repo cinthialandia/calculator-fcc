@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-no-target-blank */
+/* eslint-disable jsx-a11y/accessible-emoji */
 import React, { useState } from "react";
 import "./App.css";
 
@@ -84,140 +86,74 @@ function App() {
     <div className="App">
       <div className="title-calculator">Calculator</div>
       <div className="container-calculator">
-        <div className="equation" style={{ border: "5px solid #F1D6FF" }}>
-          {equation}
-        </div>
-        <div className="result" style={{ border: "5px solid #ebc2ff" }}>
-          {result}
-        </div>
+        <div className="equation">{equation}</div>
+        <div className="result">{result}</div>
         <div className="container1">
-          <button
-            style={{ border: "5px solid #e4adff" }}
-            className="button-number"
-            id="clear"
-            onClick={handleClear}
-          >
+          <a href="http://www.cinthialandia.com" target="_blank">
+            <button className="button-number clear">👑</button>
+          </a>
+          <a href="https://github.com/cinthialandia" target="_blank">
+            <button className="button-number">💻</button>
+          </a>
+          <button className="button-number" onClick={handleClear}>
             AC
           </button>
-          <button
-            style={{ border: "5px solid #e099ff" }}
-            className="button-number"
-            onClick={() => handleSigne("/")}
-          >
+          <button className="button-number" onClick={() => handleSigne("/")}>
             ÷
-          </button>
-          <button
-            style={{ border: "5px solid #da85ff" }}
-            className="button-number"
-            onClick={() => handleSigne("*")}
-          >
-            X
           </button>
         </div>
         <div className="container2">
-          <button
-            style={{ border: "5px solid #d470ff" }}
-            className="button-number"
-            onClick={() => handleNumber("7")}
-          >
+          <button className="button-number" onClick={() => handleNumber("7")}>
             7
           </button>
-          <button
-            style={{ border: "5px solid #ce5cff" }}
-            className="button-number"
-            onClick={() => handleNumber("8")}
-          >
+          <button className="button-number" onClick={() => handleNumber("8")}>
             8
           </button>
-          <button
-            style={{ border: "5px solid #c847ff" }}
-            className="button-number"
-            onClick={() => handleNumber("9")}
-          >
+          <button className="button-number" onClick={() => handleNumber("9")}>
             9
           </button>
-          <button
-            style={{ border: "5px solid #c233ff" }}
-            className="button-number"
-            onClick={() => handleSigne("-")}
-          >
-            -
+          <button className="button-number" onClick={() => handleSigne("*")}>
+            *
           </button>
         </div>
         <div className="container3">
-          <button
-            style={{ border: "5px solid #bc1fff" }}
-            className="button-number"
-            onClick={() => handleNumber("4")}
-          >
+          <button className="button-number" onClick={() => handleNumber("4")}>
             4
           </button>
-          <button
-            style={{ border: "5px solid #b60aff" }}
-            className="button-number"
-            onClick={() => handleNumber("5")}
-          >
+          <button className="button-number" onClick={() => handleNumber("5")}>
             5
           </button>
-          <button
-            style={{ border: "5px solid #ab00f5" }}
-            className="button-number"
-            onClick={() => handleNumber("6")}
-          >
+          <button className="button-number" onClick={() => handleNumber("6")}>
             6
           </button>
-          <button
-            style={{ border: "5px solid #9d00e0" }}
-            className="button-number"
-            onClick={() => handleSigne("+")}
-          >
-            +
+          <button className="button-number" onClick={() => handleSigne("-")}>
+            -
           </button>
         </div>
         <div className="container4">
-          <button
-            style={{ border: "5px solid #8f00cc" }}
-            className="button-number"
-            onClick={() => handleNumber("1")}
-          >
+          <button className="button-number" onClick={() => handleNumber("1")}>
             1
           </button>
-          <button
-            style={{ border: "5px solid #8100b8" }}
-            className="button-number"
-            onClick={() => handleNumber("2")}
-          >
+          <button className="button-number" onClick={() => handleNumber("2")}>
             2
           </button>
-          <button
-            style={{ border: "5px solid #7200a3" }}
-            className="button-number"
-            onClick={() => handleNumber("3")}
-          >
+          <button className="button-number" onClick={() => handleNumber("3")}>
             3
           </button>
-          <button
-            style={{ border: "5px solid #64008f" }}
-            className="button-number"
-            onClick={() => handleEqual("=")}
-          >
-            =
+          <button className="button-number" onClick={() => handleSigne("+")}>
+            +
           </button>
         </div>
         <div className="container5">
-          <button
-            style={{ border: "5px solid #56007a" }}
-            className="button-number"
-            onClick={() => handleNumber("0")}
-          >
+          <button className="button-number clear">👾</button>
+          <button className="button-number" onClick={() => handleNumber("0")}>
             0
           </button>
-          <button
-            style={{ border: "5px solid #470066" }}
-            className="button-number"
-            onClick={() => handlesignDot(".")}
-          >
+          <button className="button-number" onClick={() => handlesignDot(".")}>
             .
+          </button>
+          <button className="button-number" onClick={() => handleEqual("=")}>
+            =
           </button>
         </div>
       </div>

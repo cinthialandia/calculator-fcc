@@ -1,27 +1,171 @@
 .title-calculator {
   font-size: 80px;
+  color: #ffffff;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .container-calculator {
   display: flex;
   flex-direction: column;
-  text-align: center;
+  justify-content: center;
 }
+
 .button-number {
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   border-radius: 50px;
-  margin: 10px;
+  margin: 5px;
   background-color: #0c0014;
   color: #f9ebff;
   font-size: 25px;
 }
 
 .equation {
-  color: #f9ebff;
+  color: #f7ebff;
+  height: 50px;
+  border-radius: 20px;
+  font-size: 25px;
+  text-align: center;
+  width: 360px;
+  align-self: center;
+  border: 5px solid #efd6ff;
 }
 
 .result {
-  color: #f9ebff;
+  color: #efd6ff;
+  height: 50px;
+  border-radius: 20px;
+  font-size: 32px;
+  margin: 10px 0;
+  text-align: center;
+  width: 360px;
+  align-self: center;
+  border: 5px solid #f7ebff;
+}
+
+.container1,
+.container2,
+.container3,
+.container4,
+.container5 {
+  align-self: center;
+}
+
+:focus {
+  outline: none;
+}
+
+.container1 .button-number:nth-child(1) {
+  border: 5px solid #e8c2ff;
+}
+
+.container1 .button-number:nth-child(2) {
+  border: 5px solid #e0adff;
+}
+
+.container1 .button-number:nth-child(3) {
+  border: 5px solid #d899ff;
+}
+
+.container1 .button-number:nth-child(4) {
+  border: 5px solid #d085ff;
+}
+
+.container2 .button-number:nth-child(1) {
+  border: 5px solid #c870ff;
+}
+
+.container2 .button-number:nth-child(2) {
+  border: 5px solid #c05cff;
+}
+
+.container2 .button-number:nth-child(3) {
+  border: 5px solid #b947ff;
+}
+
+.container2 .button-number:nth-child(4) {
+  border: 5px solid #b133ff;
+}
+
+.container3 .button-number:nth-child(1) {
+  border: 5px solid #a91fff;
+}
+
+.container3 .button-number:nth-child(2) {
+  border: 5px solid #a10aff;
+}
+
+.container3 .button-number:nth-child(3) {
+  border: 5px solid #9700f5;
+}
+
+.container3 .button-number:nth-child(4) {
+  border: 5px solid #8a00e0;
+}
+
+.container4 .button-number:nth-child(1) {
+  border: 5px solid #8a00e0;
+}
+
+.container4 .button-number:nth-child(2) {
+  border: 5px solid #8a00e0;
+}
+
+.container4 .button-number:nth-child(3) {
+  border: 5px solid #8a00e0;
+}
+
+.container4 .button-number:nth-child(4) {
+  border: 5px solid #8a00e0;
+}
+
+.container5 .button-number:nth-child(1) {
+  border: 5px solid #8a00e0;
+}
+
+.container5 .button-number:nth-child(2) {
+  border: 5px solid #3f0066;
+}
+
+.container5 .button-number:nth-child(3) {
+  border: 5px solid #3f0066;
+}
+
+.container5 .button-number:nth-child(4) {
+  border: 5px solid #3f0066;
+}
+
+/* style={{ border: "5px solid #470066" }}*/
+
+/* This query was necessary for changing the size of the elements on mobile cellphone*/
+@media only screen and (max-width: 800px) {
+  /*welcome section media query*/
+  .title-drum-machine {
+    font-size: 60px;
+    margin: 25px;
+  }
+
+  .title-calculator {
+    font-size: 60px;
+    margin: 20px;
+  }
+
+  .button-number {
+    height: 60px;
+    width: 60px;
+  }
+
+  .equation {
+    height: 30px;
+    font-size: 15px;
+    width: 280px;
+  }
+
+  .result {
+    height: 30px;
+    font-size: 25px;
+    width: 280px;
+    margin-bottom: 20px;
+  }
 }
