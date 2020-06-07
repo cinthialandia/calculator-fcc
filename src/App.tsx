@@ -116,7 +116,7 @@ function App() {
             9
           </button>
           <button className="button-number" onClick={() => handleSigne("*")}>
-            *
+            x
           </button>
         </div>
         <div className="container3">

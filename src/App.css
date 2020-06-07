@@ -154,7 +154,7 @@
   .button-number {
     height: 60px;
     width: 60px;
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .equation {
@@ -165,7 +165,7 @@
 
   .result {
     height: 30px;
-    font-size: 25px;
+    font-size: 20px;
     width: 280px;
     margin-bottom: 20px;
   }
