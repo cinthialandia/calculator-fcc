@@ -82,6 +82,10 @@ function App() {
     }
   };
 
+  const handleAlien = () => {
+    alert("Take me to your leader! 👽");
+  };
+
   return (
     <div className="App">
       <div className="title-calculator">Calculator</div>
@@ -148,7 +152,9 @@ function App() {
           </button>
         </div>
         <div className="container5">
-          <button className="button-number clear">👾</button>
+          <button className="button-number" onClick={handleAlien}>
+            👾
+          </button>
           <button className="button-number" onClick={() => handleNumber("0")}>
             0
           </button>
