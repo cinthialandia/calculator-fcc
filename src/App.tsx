@@ -92,7 +92,10 @@ function App() {
           <a href="http://www.cinthialandia.com" target="_blank">
             <button className="button-number clear">👑</button>
           </a>
-          <a href="https://github.com/cinthialandia" target="_blank">
+          <a
+            href="https://github.com/cinthialandia/calculator-fcc"
+            target="_blank"
+          >
             <button className="button-number">💻</button>
           </a>
           <button className="button-number" onClick={handleClear}>
